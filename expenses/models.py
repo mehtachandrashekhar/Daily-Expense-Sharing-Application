@@ -1,14 +1,13 @@
 from django.db import models
 
-
-# Create your models here.
-
-
 class User(models.Model):
+    objects = None
     email = models.EmailField(unique=True)
     name = models.CharField(max_length=100)
     mobile_number = models.CharField(max_length=15)
 
+    def __str__(self):
+        return self.name
 
 class Expense(models.Model):
     objects = None
